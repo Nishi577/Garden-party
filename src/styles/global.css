@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --blush: #F1D3CF;
+  --lavender: #C7B8EA;
+  --gold: #EAC98F;
+  --sky: #7FCFEF;
+  --deep: #2E3A59;
+  --warm-bg: #FFF9F0;
+  --star: #F8E47C;
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+}
+
+*, *::before, *::after { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--deep);
+  background: var(--warm-bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { 
+  font-family: var(--font-heading); 
+}
+
+button { 
+  cursor: pointer; 
+  border: none; 
+  outline: none; 
+  font-family: var(--font-body); 
+}
+
+.script { 
+  font-family: var(--font-script); 
+}
+
+/* ─── Page ─── */
+.page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Cards & Glassmorphism ─── */
+.soft-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 32px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  padding: 2rem;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--blush));
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(234,201,143,0.3);
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(234,201,143,0.5);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--lavender);
+  border: 1px solid var(--lavender);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--lavender);
+  color: white;
+}
+
+/* ─── Animations ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(234,201,143,0.4)); }
+  50% { filter: drop-shadow(0 0 20px rgba(234,201,143,0.7)); }
+}
+
+.floating {
+  animation: float 5s ease-in-out infinite;
+}
+
+.glowing {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* ─── Utils ─── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+  .soft-card { border-radius: 24px; }
+  .btn-primary { padding: 14px 30px; font-size: 1rem; }
+}
