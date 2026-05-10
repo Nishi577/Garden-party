@@ -30,7 +30,7 @@ const memories = [
   },
   {
     photo: mom6,
-    line: 'Your effort lit the pathway we walk today.',
+    line: 'All the mothers, whose efforts light the pathway we walk today.',
     thought: 'You carried us to the stars.',
   },
 ];
@@ -171,7 +171,7 @@ export default function MemoryWalk({ onNext }) {
               }}>
                 <span>🎵</span>
                 <div style={{ display: 'flex', gap: '3px', alignItems: 'flex-end', height: '18px' }}>
-                  {[1,2,3,4,5].map(i => (
+                  {[1, 2, 3, 4, 5].map(i => (
                     <motion.div
                       key={i}
                       animate={{ height: [4, 16, 4] }}
